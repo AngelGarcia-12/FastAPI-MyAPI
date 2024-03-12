@@ -23,6 +23,12 @@ posts = [
         "title": "Hello World",
         "author": "Angel",
         "content": "How to make your first program"
+    },
+    {
+        "id": "4",
+        "title": "Prueba FastAPI",
+        "author": "Angel",
+        "content": "Test a new item in the API"
     }
 ]
 
@@ -52,7 +58,7 @@ def save_post(post: Post):
 @app.get('/posts/{post_id}')
 def get_post(post_id: str):
     for post in posts:
-        if posts["id"] == post_id:
+        if post["id"] == post_id:
             return post
     return HTTPException(status_code=404, detail="Post not found")
 
